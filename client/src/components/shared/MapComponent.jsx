@@ -4,10 +4,11 @@ import { EditControl } from "react-leaflet-draw";
 import 'leaflet/dist/leaflet.css';
 import { DEFAULT_POSITION } from '@/config/mapConfig';
 import TextInput from '@/components/shared/TextInput';
+import SearchControl from '@/components/shared/SearchControl'; // <-- 1. This line is now fixed
 
 const { BaseLayer, Overlay } = LayersControl;
 
-// Initialize global variable `type`
+// Initialize global variable type
 window.type = '';
 
 /************************************************************
@@ -43,13 +44,14 @@ const MapComponent = ({ textMode, editDetails, features, setFeatures, setSelecti
         setSelectedLayer({});                                   // clear the selected layer
         setIsOpen(false);
     }
+    
 
     const getPopupContent = (text) => { 
         if (!text) return '';
         let popupContent = '';                                  // extract lines
         let lastLine = text.split('\n').pop();                  // add line breaks if not the last line
         for (let line of text.split('\n')) {
-            popupContent += `${line}` + (line !== lastLine ? '<br>' : '');
+            popupContent += ${line} + (line !== lastLine ? '<br>' : '');
         }
         return popupContent;
     }
@@ -171,7 +173,7 @@ const MapComponent = ({ textMode, editDetails, features, setFeatures, setSelecti
         
         // Bind a tooltip to show the segment ID on hover
         if (feature.properties && feature.properties.segment_id) {
-            layer.bindTooltip(`Segment ID: ${feature.properties.segment_id}`, {
+            layer.bindTooltip(Segment ID: ${feature.properties.segment_id}, {
                 permanent: false,
                 direction: "auto",
                 sticky: true
@@ -263,6 +265,8 @@ const MapComponent = ({ textMode, editDetails, features, setFeatures, setSelecti
                 zoom={8}
                 style={{ height: '100vh', width: '100%' }}
             >
+                <SearchControl /> {/* <-- 2. This is correctly placed */}
+
                 <LayersControl position="topleft">
                     <BaseLayer checked name="Google Satellite">
                         <TileLayer
