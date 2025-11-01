@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
-import HeroSection from "./components/hero_section";
-import Navbar from "./components/Navbar";
+import HeroSection from "../components/hero_section";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
@@ -33,6 +33,6 @@ encryptedClassName="encrypted"
   );
 }
 
-import DecryptedText from "@/app/ui_comp/de_para"
+import DecryptedText from "@/ui_comp/de_para"
 
 {/* Example 1: Defaults (hover to decrypt) */}
