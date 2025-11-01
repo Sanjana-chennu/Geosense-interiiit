@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import SplitText from "@/app/ui_comp/text";
-import DecryptedText from "@/app/ui_comp/de_para"
+import SplitText from "@/ui_comp/text";
+import DecryptedText from "@/ui_comp/de_para"
 
 
 export default function LandingPage() {
