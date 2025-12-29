@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, FeatureGroup, LayersControl, GeoJSON } from 'react-leaflet';
 import { EditControl } from "react-leaflet-draw";
 import 'leaflet/dist/leaflet.css';
-// import 'leaflet-draw/dist/leaflet.draw.css';
+ import 'leaflet-draw/dist/leaflet.draw.css';
 import { DEFAULT_POSITION } from '@/config/mapConfig';
 import TextInput from './TextInput';
 import SearchControl from './SearchControl';
